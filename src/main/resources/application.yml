@@ -42,13 +42,13 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${AUTH_ISSUER_URI:http://localhost:8080/realms/campuslab}
+          issuer-uri: ${AUTH_ISSUER_URI:https://login.microsoftonline.com/c75374e8-15d8-446b-8c6c-291120e0c761/v2.0}
 
   # Broker externo (mismo cluster Kafka de infra/kafka que usa bookings como
   # productor). group-id "audit-svc" coincide con el sufijo de la dead-letter
   # topic propia de este servicio (bookings.events.audit-svc.DLT).
   kafka:
-    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:34.201.119.90:9092}
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:100.26.47.196:9092}
     consumer:
       group-id: audit-svc
 
